@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Preparação Automotiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Simulador de Preparação Automotiva</h1>
+    
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Dados do Veículo</h2>
+
+            <label for="modelo">Modelo do Carro:</label>
+            <select id="modelo">
+                <option>Volkswagen Golf GTI</option>
+                <option>Honda Civic SI</option>
+                <option>Volkswagen Gol</option>
+                <option>BMW 320i</option>
+                <option>Mercedes C200</option>
+                <option>Chevrolet Chevette</option>
+                <option>Mitsubishi Lancer EVO</option>
+                <option>Audi A3</option>
+
+            </select>
+
+            <br><br>
+
+            <label for="orcamento">Orçamento Disponível :</label>
+            <input type="number" id="orcamento">
+
+            <br><br>
+
+            <label for="objetivo">Objetivo da Preparação:</label>
+            <select id="objetivo">
+                <option>Economia</option>
+                <option>Desempenho</option>
+                <option>Uso Esportivo</option>
+            </select>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Opções de Preparação</h2>
+
+            <input type="checkbox" id="turbo">
+            <label for="turbo">Turbo</label><br>
+
+            <input type="checkbox" id="supercharger">
+            <label for="supercharger">Supercharger</label><br>
+
+            <input type="checkbox" id="remap">
+            <label for="remap">Remap de ECU</label><br>
+
+            <input type="checkbox" id="freios">
+            <label for="freios">Upgrade de Freios</label><br>
+
+            <input type="checkbox" id="suspensao">
+            <label for="suspensao">Suspensão Esportiva</label><br><br>
+
+            <button>Simular Preparação</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Resultado da Simulação</h2>
+
+            <table border="1">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Original</th>
+                    <th>Preparado</th>
+                </tr>
+
+                <tr>
+                    <td>Potência</td>
+                    <td>
+                        <input type="number" id="potenciaOriginal" placeholder="HP Original">
+                    </td>
+                    <td>
+                        <input type="number" id="potenciaPreparada" placeholder="HP Preparado">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Torque</td>
+                    <td>25 kgfm</td>
+                    <td>35 kgfm</td>
+                </tr>
+
+                <tr>
+                    <td>0-100 km/h</td>
+                    <td>8,5 s</td>
+                    <td>6,4 s</td>
+                </tr>
+
+                <tr>
+                    <td>Velocidade Máxima</td>
+                    <td>210 km/h</td>
+                    <td>245 km/h</td>
+                </tr>
+
+                <tr>
+                    <td>Consumo</td>
+                    <td>12 km/l</td>
+                    <td>10 km/l</td>
+                </tr>
+
+                <tr>
+                    <td>Confiabilidade</td>
+                    <td>100%</td>
+                    <td>85%</td>
+                </tr>
+
+                <tr>
+                    <td>Custo Estimado</td>
+                    <td>R$ 0</td>
+                    <td>R$ 14.500</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Segurança e Legalização</h2>
+
+            <p>
+                Algumas modificações exigem regularização e documentação específica.
+            </p>
+
+            <h3>Nível de Risco</h3>
+            <ul>
+                <li>Baixo</li>
+                <li>Médio</li>
+                <li>Alto</li>
+            </ul>
+
+            <h3>Recomendações</h3>
+            <p>
+                Considere realizar upgrades de freios e suspensão para aumentar a segurança do veículo.
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Preparação Automática</h2>
+
+            <p>
+                Informe o modelo do carro, orçamento disponível e objetivo da preparação.
+                O sistema irá sugerir automaticamente uma configuração compatível.
+            </p>
+
+            <button>Gerar Preparação Automática</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Pontuação Final</h2>
+
+            <table border="1">
+                <tr>
+                    <th>Categoria</th>
+                    <th>Nota</th>
+                </tr>
+
+                <tr>
+                    <td>Desempenho</td>
+                    <td>9,5</td>
+                </tr>
+
+                <tr>
+                    <td>Segurança</td>
+                    <td>8,0</td>
+                </tr>
+
+                <tr>
+                    <td>Economia</td>
+                    <td>6,5</td>
+                </tr>
+
+                <tr>
+                    <td>Custo-Benefício</td>
+                    <td>8,7</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Relatório Final</h2>
+
+            <p>
+                Gere um relatório contendo todas as informações da preparação realizada.
+            </p>
+
+            <button>Gerar Relatório PDF</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Simulador de Preparação Automotiva © 2026</p>
+    </footer>
+
+</body>
+</html>
