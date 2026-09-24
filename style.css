@@ -1,152 +1,1197 @@
-/* Reset */
-*{
+/* =====================================================
+   SIMULADOR DE PREPARAÇÃO AUTOMOTIVA
+   CSS PRINCIPAL
+   ===================================================== */
+
+
+/* ---------- RESET ---------- */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Corpo */
-body{
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+
+html {
+
+    scroll-behavior: smooth;
+
 }
 
-/* Cabeçalho */
-header{
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 30px;
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        #0b1120;
+
+    color:
+        #e5e7eb;
+
+    line-height:
+        1.6;
+
 }
 
-header h1{
-    margin-bottom: 10px;
+
+
+img {
+
+    max-width: 100%;
+
 }
 
-/* Conteúdo principal */
-main{
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
+
+
+button,
+input,
+select {
+
+    font-family: inherit;
+
 }
 
-/* Seções */
-section{
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+
+
+/* ---------- ACESSIBILIDADE ---------- */
+
+
+:focus-visible {
+
+    outline:
+        3px solid #38bdf8;
+
+    outline-offset:
+        3px;
+
 }
 
-section h2{
-    color: #0056b3;
-    margin-bottom: 15px;
+
+
+
+
+
+/* ---------- HEADER ---------- */
+
+
+.header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+        20px 6%;
+
+    background:
+        rgba(15,23,42,.95);
+
+    backdrop-filter:
+        blur(10px);
+
+    border-bottom:
+        1px solid #334155;
+
 }
 
-/* Labels */
-label{
-    font-weight: bold;
+
+
+.logo h1 {
+
+    font-size:
+        1.4rem;
+
+    color:
+        #38bdf8;
+
 }
 
-/* Inputs e Selects */
-input[type="number"],
-select{
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+
+
+.nav {
+
+    display:
+        flex;
+
+    gap:
+        20px;
+
 }
 
-/* Checkboxes */
-input[type="checkbox"]{
-    margin-right: 8px;
-    margin-top: 10px;
+
+
+.nav a {
+
+    text-decoration:
+        none;
+
+    color:
+        #e2e8f0;
+
+    transition:
+        .3s;
+
 }
 
-/* Botões */
-button{
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 15px;
+
+.nav a:hover {
+
+    color:
+        #38bdf8;
+
 }
 
-button:hover{
-    background-color: #0056b3;
+
+
+.menu-toggle {
+
+    display:
+        none;
+
+    background:
+        none;
+
+    border:
+        0;
+
+    color:
+        white;
+
+    font-size:
+        2rem;
+
 }
 
-/* Tabelas */
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+
+
+
+
+
+
+/* ---------- GERAL ---------- */
+
+
+.section {
+
+    padding:
+        70px 6%;
+
 }
 
-table th{
-    background-color: #111;
-    color: white;
-    padding: 12px;
+
+
+.section h2 {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
+
+    color:
+        #38bdf8;
+
+    font-size:
+        2rem;
+
 }
 
-table td{
-    padding: 10px;
-    text-align: center;
+
+
+
+.hero {
+
+    min-height:
+        90vh;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:
+        center;
+
+    padding:
+        80px 6%;
+
+    background:
+        linear-gradient(
+        135deg,
+        #020617,
+        #1e293b
+        );
+
 }
 
-table tr:nth-child(even){
-    background-color: #f2f2f2;
+
+
+.hero h2 {
+
+    font-size:
+        3rem;
+
+    color:
+        white;
+
 }
 
-table,
-th,
-td{
-    border: 1px solid #ccc;
+
+
+.hero p {
+
+    margin:
+        25px 0;
+
+    font-size:
+        1.15rem;
+
+    max-width:
+        600px;
+
 }
 
-/* Lista */
-ul{
-    margin-left: 20px;
-    margin-top: 10px;
+
+
+.hero-image {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
 }
 
-/* Linha divisória */
-hr{
-    display: none;
+
+
+.car-animation {
+
+    font-size:
+        10rem;
+
+    animation:
+        carFloat 3s infinite alternate;
+
 }
 
-/* Rodapé */
-footer{
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
 
-/* Responsividade */
-@media (max-width: 768px){
 
-    main{
-        width: 95%;
+@keyframes carFloat {
+
+    from {
+
+        transform:
+            translateY(0);
+
     }
 
-    section{
-        padding: 15px;
+
+    to {
+
+        transform:
+            translateY(-20px);
+
     }
 
-    table{
-        font-size: 14px;
+}
+
+
+
+
+
+
+
+/* ---------- BOTÕES ---------- */
+
+
+.btn {
+
+    border:
+        none;
+
+    padding:
+        14px 25px;
+
+    border-radius:
+        10px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .3s;
+
+    font-weight:
+        bold;
+
+}
+
+
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+
+.primary {
+
+    background:
+        #0ea5e9;
+
+    color:
+        white;
+
+}
+
+
+
+.secondary {
+
+    background:
+        #475569;
+
+    color:
+        white;
+
+}
+
+
+
+.danger {
+
+    background:
+        #dc2626;
+
+    color:
+        white;
+
+}
+
+
+
+
+
+
+
+/* ---------- FORMULÁRIOS ---------- */
+
+
+.form-card {
+
+    max-width:
+        800px;
+
+    margin:
+        auto;
+
+    background:
+        #111827;
+
+    padding:
+        30px;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+
+label {
+
+    display:
+        block;
+
+    margin-top:
+        20px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+
+input,
+select {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    border-radius:
+        8px;
+
+    border:
+        1px solid #475569;
+
+    background:
+        #020617;
+
+    color:
+        white;
+
+}
+
+
+
+
+.error {
+
+    color:
+        #f87171;
+
+    margin-top:
+        10px;
+
+}
+
+
+
+
+
+
+/* ---------- CARDS ---------- */
+
+
+.cards-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:
+        25px;
+
+}
+
+
+
+
+.vehicle-card,
+.info-box,
+.score-card,
+.summary-card,
+.security-card,
+.about-card,
+.chart-box {
+
+    background:
+        #111827;
+
+    padding:
+        25px;
+
+    border-radius:
+        18px;
+
+    border:
+        1px solid #334155;
+
+}
+
+
+
+
+.vehicle-card {
+
+    margin-top:
+        25px;
+
+}
+
+
+
+
+.modification-card {
+
+    background:
+        #111827;
+
+    border:
+        2px solid transparent;
+
+    border-radius:
+        18px;
+
+    padding:
+        25px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .3s;
+
+}
+
+
+
+.modification-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
+
+}
+
+
+
+.modification-card.selected {
+
+    border-color:
+        #22c55e;
+
+    background:
+        #052e16;
+
+}
+
+
+
+.selected-icon {
+
+    color:
+        #22c55e;
+
+    font-size:
+        1.5rem;
+
+}
+
+
+
+
+
+
+
+/* ---------- FINANCEIRO ---------- */
+
+
+.financial-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+
+    gap:
+        20px;
+
+}
+
+
+
+
+
+.progress-container {
+
+    width:
+        100%;
+
+    height:
+        25px;
+
+    background:
+        #334155;
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+    margin:
+        25px 0;
+
+}
+
+
+
+
+.progress-bar {
+
+    height:
+        100%;
+
+    width:
+        0%;
+
+    background:
+        #22c55e;
+
+    transition:
+        width .8s;
+
+}
+
+
+
+
+
+.progress-bar.over {
+
+    background:
+        #ef4444;
+
+}
+
+
+
+
+
+
+
+/* ---------- TABELAS ---------- */
+
+
+.table-wrapper {
+
+    overflow-x:
+        auto;
+
+}
+
+
+
+table {
+
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    margin-top:
+        20px;
+
+}
+
+
+
+th {
+
+    background:
+        #1e293b;
+
+}
+
+
+
+td,
+th {
+
+    padding:
+        14px;
+
+    border:
+        1px solid #334155;
+
+}
+
+
+
+.good {
+
+    color:
+        #22c55e;
+
+}
+
+
+
+.bad {
+
+    color:
+        #ef4444;
+
+}
+
+
+
+.neutral {
+
+    color:
+        #facc15;
+
+}
+
+
+
+
+
+
+
+/* ---------- GRÁFICOS ---------- */
+
+
+.chart-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(300px,1fr));
+
+    gap:
+        25px;
+
+}
+
+
+
+.chart-box canvas {
+
+    width:
+        100% !important;
+
+}
+
+
+
+
+
+
+
+/* ---------- SEGURANÇA ---------- */
+
+
+.risk-indicator {
+
+    height:
+        20px;
+
+    border-radius:
+        20px;
+
+    background:
+        #475569;
+
+    margin:
+        20px 0;
+
+}
+
+
+
+.risk-low {
+
+    background:
+        #22c55e;
+
+}
+
+
+
+.risk-medium {
+
+    background:
+        #facc15;
+
+}
+
+
+
+.risk-high {
+
+    background:
+        #ef4444;
+
+}
+
+
+
+
+
+
+
+
+/* ---------- PONTUAÇÃO ---------- */
+
+
+.scores-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:
+        20px;
+
+}
+
+
+
+.score-card {
+
+    text-align:
+        center;
+
+}
+
+
+
+.score-card strong {
+
+    display:
+        block;
+
+    margin-top:
+        15px;
+
+    font-size:
+        3rem;
+
+    color:
+        #38bdf8;
+
+}
+
+
+
+
+
+
+
+/* ---------- TOAST ---------- */
+
+
+#toastContainer {
+
+    position:
+        fixed;
+
+    right:
+        20px;
+
+    bottom:
+        20px;
+
+    z-index:
+        2000;
+
+}
+
+
+
+.toast {
+
+    background:
+        #1e293b;
+
+    color:
+        white;
+
+    padding:
+        15px 25px;
+
+    border-radius:
+        10px;
+
+    margin-top:
+        10px;
+
+    animation:
+        fade .4s;
+
+}
+
+
+
+@keyframes fade {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
     }
 
-    button{
-        width: 100%;
+
+    to {
+
+        opacity:
+            1;
+
     }
+
+}
+
+
+
+
+
+
+
+
+/* ---------- FOOTER ---------- */
+
+
+.footer {
+
+    text-align:
+        center;
+
+    padding:
+        40px;
+
+    background:
+        #020617;
+
+}
+
+
+
+.footer a {
+
+    color:
+        #38bdf8;
+
+    margin:
+        10px;
+
+}
+
+
+
+
+
+
+
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+
+@media(max-width:900px){
+
+
+.hero {
+
+    grid-template-columns:
+        1fr;
+
+    text-align:
+        center;
+
+}
+
+
+
+.hero h2 {
+
+    font-size:
+        2.2rem;
+
+}
+
+
+
+.menu-toggle {
+
+    display:
+        block;
+
+}
+
+
+
+.nav {
+
+    position:
+        absolute;
+
+    top:
+        80px;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    flex-direction:
+        column;
+
+    background:
+        #020617;
+
+    padding:
+        20px;
+
+    display:
+        none;
+
+}
+
+
+
+.nav.active {
+
+    display:
+        flex;
+
+}
+
+
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+.section {
+
+    padding:
+        50px 20px;
+
+}
+
+
+
+.btn {
+
+    width:
+        100%;
+
+}
+
+
+
+.car-animation {
+
+    font-size:
+        6rem;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ---------- IMPRESSÃO ---------- */
+
+
+@media print {
+
+
+body {
+
+    background:
+        white;
+
+    color:
+        black;
+
+}
+
+
+
+.header,
+.nav,
+.menu-toggle,
+.hero,
+.buttons,
+.footer {
+
+    display:
+        none !important;
+
+}
+
+
+
+.section {
+
+    padding:
+        20px;
+
+}
+
+
+
+.vehicle-card,
+.info-box,
+.score-card,
+.summary-card,
+.security-card {
+
+    color:
+        black;
+
+    background:
+        white;
+
+    border:
+        1px solid #ccc;
+
+}
+
+
+
+canvas {
+
+    max-width:
+        100%;
+
+}
+
+
+
 }
