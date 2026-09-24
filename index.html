@@ -3,217 +3,998 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Simulador de Preparação Automotiva</title>
+
+    <meta name="description" content="Simulador acadêmico de preparação automotiva desenvolvido para o 3º DS.">
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- jsPDF para geração de PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
+
 <body>
 
-    <header>
+<header class="header">
+
+    <div class="logo">
         <h1>Simulador de Preparação Automotiva</h1>
-    
-    </header>
+    </div>
 
-    <main>
+    <button 
+        id="menuToggle"
+        class="menu-toggle"
+        aria-label="Abrir menu">
+        ☰
+    </button>
 
-        <section>
-            <h2>Dados do Veículo</h2>
 
-            <label for="modelo">Modelo do Carro:</label>
-            <select id="modelo">
-                <option>Volkswagen Golf GTI</option>
-                <option>Honda Civic SI</option>
-                <option>Volkswagen Gol</option>
-                <option>BMW 320i</option>
-                <option>Mercedes C200</option>
-                <option>Chevrolet Chevette</option>
-                <option>Mitsubishi Lancer EVO</option>
-                <option>Audi A3</option>
+    <nav id="mainMenu" class="nav">
 
-            </select>
+        <a href="#inicio">Início</a>
+        <a href="#veiculo">Veículo</a>
+        <a href="#preparacao">Preparação</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#relatorio">Relatório</a>
+        <a href="#sobre">Sobre</a>
 
-            <br><br>
+    </nav>
 
-            <label for="orcamento">Orçamento Disponível :</label>
-            <input type="number" id="orcamento">
+</header>
 
-            <br><br>
 
-            <label for="objetivo">Objetivo da Preparação:</label>
-            <select id="objetivo">
-                <option>Economia</option>
-                <option>Desempenho</option>
-                <option>Uso Esportivo</option>
-            </select>
-        </section>
 
-        <hr>
+<main>
 
-        <section>
-            <h2>Opções de Preparação</h2>
 
-            <input type="checkbox" id="turbo">
-            <label for="turbo">Turbo</label><br>
+<section id="inicio" class="hero">
 
-            <input type="checkbox" id="supercharger">
-            <label for="supercharger">Supercharger</label><br>
+    <div class="hero-content">
 
-            <input type="checkbox" id="remap">
-            <label for="remap">Remap de ECU</label><br>
+        <h2>
+            Simule. Prepare. Compare.
+        </h2>
 
-            <input type="checkbox" id="freios">
-            <label for="freios">Upgrade de Freios</label><br>
 
-            <input type="checkbox" id="suspensao">
-            <label for="suspensao">Suspensão Esportiva</label><br><br>
+        <p>
+            Monte virtualmente a preparação do seu veículo,
+            compare desempenho, custos, segurança e descubra
+            uma configuração compatível com seu objetivo e orçamento.
+        </p>
 
-            <button>Simular Preparação</button>
-        </section>
 
-        <hr>
+        <button 
+            id="startSimulation"
+            class="btn primary">
+            Começar Simulação
+        </button>
 
-        <section>
-            <h2>Resultado da Simulação</h2>
+    </div>
 
-            <table border="1">
-                <tr>
-                    <th>Parâmetro</th>
-                    <th>Original</th>
-                    <th>Preparado</th>
-                </tr>
 
-                <tr>
-                    <td>Potência</td>
-                    <td>
-                        <input type="number" id="potenciaOriginal" placeholder="HP Original">
-                    </td>
-                    <td>
-                        <input type="number" id="potenciaPreparada" placeholder="HP Preparado">
-                    </td>
-                </tr>
+    <div class="hero-image">
 
-                <tr>
-                    <td>Torque</td>
-                    <td>25 kgfm</td>
-                    <td>35 kgfm</td>
-                </tr>
+        <div class="car-animation">
+            🚗
+        </div>
 
-                <tr>
-                    <td>0-100 km/h</td>
-                    <td>8,5 s</td>
-                    <td>6,4 s</td>
-                </tr>
+    </div>
 
-                <tr>
-                    <td>Velocidade Máxima</td>
-                    <td>210 km/h</td>
-                    <td>245 km/h</td>
-                </tr>
 
-                <tr>
-                    <td>Consumo</td>
-                    <td>12 km/l</td>
-                    <td>10 km/l</td>
-                </tr>
+</section>
 
-                <tr>
-                    <td>Confiabilidade</td>
-                    <td>100%</td>
-                    <td>85%</td>
-                </tr>
 
-                <tr>
-                    <td>Custo Estimado</td>
-                    <td>R$ 0</td>
-                    <td>R$ 14.500</td>
-                </tr>
-            </table>
-        </section>
 
-        <hr>
 
-        <section>
-            <h2>Segurança e Legalização</h2>
 
-            <p>
-                Algumas modificações exigem regularização e documentação específica.
-            </p>
+<section id="veiculo" class="section">
 
-            <h3>Nível de Risco</h3>
-            <ul>
-                <li>Baixo</li>
-                <li>Médio</li>
-                <li>Alto</li>
-            </ul>
+<h2>Dados do Veículo</h2>
 
-            <h3>Recomendações</h3>
-            <p>
-                Considere realizar upgrades de freios e suspensão para aumentar a segurança do veículo.
-            </p>
-        </section>
 
-        <hr>
+<div class="form-card">
 
-        <section>
-            <h2>Preparação Automática</h2>
 
-            <p>
-                Informe o modelo do carro, orçamento disponível e objetivo da preparação.
-                O sistema irá sugerir automaticamente uma configuração compatível.
-            </p>
+<label for="vehicleSelect">
+Escolha o veículo:
+</label>
 
-            <button>Gerar Preparação Automática</button>
-        </section>
 
-        <hr>
+<select id="vehicleSelect">
 
-        <section>
-            <h2>Pontuação Final</h2>
+<option value="gti">
+Volkswagen Golf GTI
+</option>
 
-            <table border="1">
-                <tr>
-                    <th>Categoria</th>
-                    <th>Nota</th>
-                </tr>
+<option value="civic">
+Honda Civic Si
+</option>
 
-                <tr>
-                    <td>Desempenho</td>
-                    <td>9,5</td>
-                </tr>
+<option value="gol">
+Volkswagen Gol
+</option>
 
-                <tr>
-                    <td>Segurança</td>
-                    <td>8,0</td>
-                </tr>
+<option value="bmw">
+BMW 320i
+</option>
 
-                <tr>
-                    <td>Economia</td>
-                    <td>6,5</td>
-                </tr>
+<option value="c200">
+Mercedes-Benz C200
+</option>
 
-                <tr>
-                    <td>Custo-Benefício</td>
-                    <td>8,7</td>
-                </tr>
-            </table>
-        </section>
+<option value="chevette">
+Chevrolet Chevette
+</option>
 
-        <hr>
+<option value="lancer">
+Mitsubishi Lancer Evolution
+</option>
 
-        <section>
-            <h2>Relatório Final</h2>
+<option value="a3">
+Audi A3
+</option>
 
-            <p>
-                Gere um relatório contendo todas as informações da preparação realizada.
-            </p>
+</select>
 
-            <button>Gerar Relatório PDF</button>
-        </section>
 
-    </main>
 
-    <footer>
-        <p>Simulador de Preparação Automotiva © 2026</p>
-    </footer>
+<div id="vehicleCard" class="vehicle-card">
+
+<p>
+Selecione um veículo para visualizar os dados.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="configuracao" class="section">
+
+
+<h2>Configuração da Preparação</h2>
+
+
+
+<div class="form-card">
+
+
+<label for="budget">
+
+Orçamento disponível:
+
+</label>
+
+
+<input 
+type="number"
+id="budget"
+min="1"
+placeholder="Ex: 15000">
+
+
+
+<p id="budgetError" class="error"></p>
+
+
+
+
+<label for="goal">
+
+Objetivo da preparação:
+
+</label>
+
+
+
+<select id="goal">
+
+
+<option value="economia">
+Economia
+</option>
+
+
+<option value="desempenho">
+Desempenho
+</option>
+
+
+<option value="esportivo">
+Uso Esportivo
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="preparacao" class="section">
+
+
+<h2>
+Seleção de Modificações
+</h2>
+
+
+<div 
+id="modificationsContainer"
+class="cards-grid">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+Resumo Financeiro
+</h2>
+
+
+<div class="financial-grid">
+
+
+<div class="info-box">
+
+<h3>
+Orçamento
+</h3>
+
+<p id="financeBudget">
+R$ 0,00
+</p>
+
+</div>
+
+
+
+<div class="info-box">
+
+<h3>
+Preparação
+</h3>
+
+<p id="financeCost">
+R$ 0,00
+</p>
+
+</div>
+
+
+
+<div class="info-box">
+
+<h3>
+Restante
+</h3>
+
+<p id="financeRemaining">
+R$ 0,00
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div class="progress-container">
+
+<div 
+id="budgetProgress"
+class="progress-bar">
+
+</div>
+
+</div>
+
+
+
+<p id="budgetStatus">
+
+</p>
+
+
+
+
+<div class="table-wrapper">
+
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Modificação
+</th>
+
+<th>
+Custo
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="costTable">
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="resultados" class="section">
+
+
+<h2>
+Simulação de Desempenho
+</h2>
+
+
+
+<div class="table-wrapper">
+
+
+<table class="comparison-table">
+
+
+<thead>
+
+<tr>
+
+<th>
+Parâmetro
+</th>
+
+<th>
+Original
+</th>
+
+<th>
+Preparado
+</th>
+
+<th>
+Diferença
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody id="comparisonTable">
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section charts">
+
+
+<h2>
+Gráficos Comparativos
+</h2>
+
+
+
+<div class="chart-grid">
+
+
+<div class="chart-box">
+
+<canvas id="powerChart"></canvas>
+
+</div>
+
+
+
+<div class="chart-box">
+
+<canvas id="torqueChart"></canvas>
+
+</div>
+
+
+
+<div class="chart-box">
+
+<canvas id="performanceChart"></canvas>
+
+</div>
+
+
+
+<div class="chart-box">
+
+<canvas id="scoreChart"></canvas>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+Recomendações para sua preparação
+</h2>
+
+
+<div 
+id="recommendations"
+class="recommendations">
+
+
+<p>
+Configure sua preparação para receber recomendações.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="seguranca" class="section">
+
+
+<h2>
+Segurança e Legalização
+</h2>
+
+
+<div class="security-card">
+
+
+<h3>
+Nível de risco:
+<span id="riskLevel">
+-
+</span>
+
+</h3>
+
+
+
+<div 
+id="riskIndicator"
+class="risk-indicator">
+
+</div>
+
+
+
+<p id="securityText">
+
+</p>
+
+
+
+<h3>
+Legalização
+</h3>
+
+
+<p id="legalizationText">
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section automatic">
+
+
+<h2>
+Preparação Automática
+</h2>
+
+
+
+<p>
+
+O sistema analisará o veículo, objetivo e orçamento
+para sugerir uma configuração equilibrada.
+
+</p>
+
+
+<button 
+id="automaticButton"
+class="btn primary">
+
+Gerar Preparação Automática
+
+</button>
+
+
+
+<div id="automaticResult">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+Pontuação da Preparação
+</h2>
+
+
+
+<div class="scores-grid">
+
+
+<div class="score-card">
+
+<h3>
+Desempenho
+</h3>
+
+<strong id="performanceScore">
+0
+</strong>
+
+</div>
+
+
+
+<div class="score-card">
+
+<h3>
+Segurança
+</h3>
+
+<strong id="securityScore">
+0
+</strong>
+
+</div>
+
+
+
+<div class="score-card">
+
+<h3>
+Economia
+</h3>
+
+<strong id="economyScore">
+0
+</strong>
+
+</div>
+
+
+
+<div class="score-card">
+
+<h3>
+Custo-benefício
+</h3>
+
+<strong id="valueScore">
+0
+</strong>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="section" id="summary">
+
+
+<h2>
+Resumo da Preparação
+</h2>
+
+
+<div id="finalSummary"
+class="summary-card">
+
+
+<p>
+Nenhuma simulação realizada.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="relatorio" class="section report-section">
+
+
+<h2>
+Relatório
+
+</h2>
+
+
+<div class="buttons">
+
+
+<button 
+id="pdfButton"
+class="btn primary">
+
+Gerar Relatório PDF
+
+</button>
+
+
+<button 
+id="printButton"
+class="btn secondary">
+
+Imprimir Relatório
+
+</button>
+
+
+
+<button 
+id="resetButton"
+class="btn danger">
+
+Resetar Simulação
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+Dados e Limitações
+</h2>
+
+
+<p>
+
+Os valores apresentados são estimativas utilizadas para fins educacionais
+e podem variar de acordo com o veículo, peças, instalação, combustível,
+manutenção, condições de uso e configuração.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section ods">
+
+
+<h2>
+Objetivos de Desenvolvimento Sustentável
+</h2>
+
+
+<h3>
+ODS 9 — Indústria, Inovação e Infraestrutura
+</h3>
+
+
+<p>
+
+O projeto relaciona-se à inovação tecnológica no setor automotivo,
+especialmente no uso de tecnologias de gerenciamento eletrônico,
+equipamentos e soluções voltadas à preparação automotiva.
+
+</p>
+
+
+
+<h3>
+ODS 17 — Parcerias e Meios de Implementação
+</h3>
+
+
+<p>
+
+O desenvolvimento de tecnologias automotivas envolve colaboração entre
+fabricantes de equipamentos, oficinas, profissionais especializados
+e consumidores.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="sobre" class="section">
+
+
+<h2>
+Sobre o Projeto
+</h2>
+
+
+<div class="about-card">
+
+
+<p>
+<strong>
+Simulador de Preparação Automotiva
+</strong>
+</p>
+
+
+<p>
+Aluno: Arthur Moreira Ribeiro
+</p>
+
+
+<p>
+Turma: 3º DS
+</p>
+
+
+<p>
+Nicho: Setor Automotivo
+</p>
+
+
+<p>
+Objetivo:
+Apresentar diferentes tipos de preparação automotiva
+por meio de um simulador interativo.
+</p>
+
+
+
+<p>
+Público-alvo:
+Estudantes, entusiastas automotivos e interessados
+em tecnologia aplicada ao setor automotivo.
+</p>
+
+
+
+<p>
+Tecnologias:
+HTML5, CSS3 e JavaScript.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<div 
+id="toastContainer"
+aria-live="polite">
+
+</div>
+
+
+
+
+
+<footer class="footer">
+
+
+<p>
+Simulador de Preparação Automotiva © 2026
+</p>
+
+
+<p>
+Projeto acadêmico — 3º DS
+</p>
+
+
+<p>
+Arthur Moreira Ribeiro
+</p>
+
+
+
+<div>
+
+<a href="#inicio">
+Início
+</a>
+
+<a href="#veiculo">
+Veículo
+</a>
+
+<a href="#resultados">
+Resultados
+</a>
+
+<a href="#sobre">
+Sobre
+</a>
+
+</div>
+
+
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
